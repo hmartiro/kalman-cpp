@@ -49,9 +49,16 @@ public:
   void init(double t0, const Eigen::VectorXd& x0);
 
   /**
-  * Update the estimated state based on measured values.
+  * Update the estimated state based on measured values. The
+  * time step is assumed to remain constant.
   */
   void update(const Eigen::VectorXd& y);
+
+  /**
+  * Update the estimated state based on measured values,
+  * using the given time step and dynamics matrix.
+  */
+  void update(const Eigen::VectorXd& y, double dt, const Eigen::MatrixXd A);
 
   /**
   * Return the current state and time.
@@ -81,5 +88,4 @@ private:
 
   // Estimated states
   Eigen::VectorXd x_hat, x_hat_new;
-
 };
