@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
   std::cout << "P: \n" << P << std::endl;
 
   // Construct the filter
-  KalmanFilter kf(A, C, Q, R, P);
+  KalmanFilter kf(dt,A, C, Q, R, P);
 
   // List of noisy position measurements (y)
   std::vector<double> measurements = {
@@ -57,11 +57,12 @@ int main(int argc, char* argv[]) {
 
   // Best guess of initial states
   Eigen::VectorXd x0(n);
+  double t = 0;
   x0 << measurements[0], 0, -9.81;
-  kf.init(x0);
+  kf.init(t, x0);
 
   // Feed measurements into filter, output estimated states
-  double t = 0;
+
   Eigen::VectorXd y(m);
   std::cout << "t = " << t << ", " << "x_hat[0]: " << kf.state().transpose() << std::endl;
   for(int i = 0; i < measurements.size(); i++) {
