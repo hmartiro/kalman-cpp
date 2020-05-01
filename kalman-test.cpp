@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
   std::cout << "P: \n" << P << std::endl;
 
   // Construct the filter
-  KalmanFilter kf(A, C, Q, R, P);
+  KalmanFilter kf(dt, A, C, Q, R, P);
 
   // List of noisy position measurements (y)
   std::vector<double> measurements = {
