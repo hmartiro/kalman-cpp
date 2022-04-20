@@ -2,8 +2,7 @@ Kalman Filter
 =============
 This is a basic Kalman filter implementation in C++ using the
 [Eigen](http://eigen.tuxfamily.org/) library. It implements the algorithm
-directly as found in [An Introduction to the Kalman Filter]
-(http://www.cs.unc.edu/~welch/media/pdf/kalman_intro.pdf).
+directly as found in [An Introduction to the Kalman Filter](http://www.cs.unc.edu/~welch/media/pdf/kalman_intro.pdf).
 
 This filter has been successfully used for the
 [Iron Dome](https://github.com/hmartiro/iron-dome), a robotic system
